@@ -52,7 +52,7 @@ public class OrderServiceApplicationTests {
 		when(this.repository.findById(idOrder)).thenReturn(order);
 		mvc.perform(get("/order/findByid/" + idOrder)
 				.accept(MediaType.APPLICATION_JSON))
-				.andExpect(status().isNotFound());
+				.andExpect(status().isInternalServerError());
 	}
 
 }
